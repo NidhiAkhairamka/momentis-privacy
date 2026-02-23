@@ -33,21 +33,27 @@
         .logo-icon {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+            background: #f0fdfa;
             border-radius: 20px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 16px;
         }
-        .logo-icon span {
-            font-size: 40px;
-        }
         h1 {
             color: #1e293b;
             font-size: 28px;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
             text-align: center;
+        }
+        .tagline {
+            color: #0d9488;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 8px;
         }
         .subtitle {
             color: #64748b;
@@ -241,10 +247,24 @@
     <div class="container">
         <div class="logo">
             <div class="logo-icon">
-                <span>🏋️</span>
+                <svg width="48" height="48" viewBox="0 0 100 100">
+                    <defs>
+                        <linearGradient id="momentumGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#0f766e" />
+                            <stop offset="100%" stop-color="#2dd4bf" />
+                        </linearGradient>
+                    </defs>
+                    <!-- First arc -->
+                    <path d="M15 80 Q15 25, 40 20 Q55 17, 62 35" stroke="url(#momentumGrad)" stroke-width="10" stroke-linecap="round" fill="none" />
+                    <!-- Second arc -->
+                    <path d="M48 70 Q48 32, 72 22 Q88 15, 95 40" stroke="url(#momentumGrad)" stroke-width="10" stroke-linecap="round" fill="none" />
+                    <!-- Arrow tip -->
+                    <path d="M88 32 L100 48 L94 28 Z" fill="#14b8a6" />
+                </svg>
             </div>
-            <h1>Delete My Data</h1>
-            <p class="subtitle">Momentis Data Deletion Request</p>
+            <h1>Momentis</h1>
+            <p class="tagline">build momentum</p>
+            <p class="subtitle">Data Deletion Request</p>
         </div>
 
         <div id="form-section">
@@ -346,7 +366,7 @@
 `);
             
             // Replace YOUR_GITHUB_USERNAME and YOUR_REPO with your actual values
-            const githubUrl = `https://github.com/NidhiAkhairamka/momentis-privacy/issues/new?title=${issueTitle}&body=${issueBody}&labels=deletion-request`;
+            const githubUrl = `https://github.com/YOUR_GITHUB_USERNAME/momentis-privacy/issues/new?title=${issueTitle}&body=${issueBody}&labels=deletion-request`;
             
             // Open GitHub issue page
             window.open(githubUrl, '_blank');
