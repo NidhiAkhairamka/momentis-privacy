@@ -25,15 +25,36 @@
             border-radius: 16px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         }
+        .logo-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .logo-container {
+            width: 80px;
+            height: 80px;
+            background: #f0fdfa;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
         h1 {
             color: #0d9488;
             font-size: 32px;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
+        }
+        .tagline {
+            color: #0d9488;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
         }
         .subtitle {
             color: #64748b;
             font-size: 14px;
-            margin-bottom: 32px;
+            margin-top: 16px;
         }
         h2 {
             color: #1e293b;
@@ -89,8 +110,27 @@
 </head>
 <body>
     <div class="container">
-        <h1>🏋️ Momentis Privacy Policy</h1>
-        <p class="subtitle">Last updated: February 2025</p>
+        <div class="logo-header">
+            <div class="logo-container">
+                <svg width="48" height="48" viewBox="0 0 100 100">
+                    <defs>
+                        <linearGradient id="momentumGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#0f766e" />
+                            <stop offset="100%" stop-color="#2dd4bf" />
+                        </linearGradient>
+                    </defs>
+                    <!-- First arc -->
+                    <path d="M15 80 Q15 25, 40 20 Q55 17, 62 35" stroke="url(#momentumGrad)" stroke-width="10" stroke-linecap="round" fill="none" />
+                    <!-- Second arc -->
+                    <path d="M48 70 Q48 32, 72 22 Q88 15, 95 40" stroke="url(#momentumGrad)" stroke-width="10" stroke-linecap="round" fill="none" />
+                    <!-- Arrow tip -->
+                    <path d="M88 32 L100 48 L94 28 Z" fill="#14b8a6" />
+                </svg>
+            </div>
+            <h1>Momentis</h1>
+            <p class="tagline">build momentum</p>
+            <p class="subtitle">Privacy Policy • Last updated: February 2025</p>
+        </div>
 
         <div class="highlight">
             <p>Your privacy matters. Momentis stores all your personal data locally on your device. We do not collect, sell, or share your personal information with third parties for advertising purposes.</p>
@@ -161,7 +201,7 @@
         <div class="contact">
             <h3>📧 Contact Us</h3>
             <p>If you have any questions about this Privacy Policy, please contact us at:</p>
-            <p><strong>Email:</strong> <a href=>nidhididwania@gmail.com</a></p>
+            <p><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3645434646594442765b595b5358425f4518574646">[email&#160;protected]</a></p>
         </div>
 
         <div class="footer">
