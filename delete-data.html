@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Momentis - Delete My Data</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background: linear-gradient(135deg, #f0fdfa 0%, #f8fafc 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .logo-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+        .logo-icon span {
+            font-size: 40px;
+        }
+        h1 {
+            color: #1e293b;
+            font-size: 28px;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .subtitle {
+            color: #64748b;
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .info-box {
+            background: #f0fdfa;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #0d9488;
+            margin-bottom: 24px;
+        }
+        .info-box h3 {
+            color: #0f766e;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        .info-box p {
+            color: #0f766e;
+            font-size: 14px;
+            margin: 0;
+        }
+        .warning-box {
+            background: #fef2f2;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #ef4444;
+            margin-bottom: 24px;
+        }
+        .warning-box h3 {
+            color: #dc2626;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        .warning-box p, .warning-box li {
+            color: #991b1b;
+            font-size: 14px;
+        }
+        .warning-box ul {
+            margin: 8px 0 0 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        input[type="email"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            font-family: inherit;
+        }
+        input[type="email"]:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #0d9488;
+            box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+        }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .checkbox-group input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+            accent-color: #0d9488;
+        }
+        .checkbox-group label {
+            margin: 0;
+            font-weight: 400;
+            color: #475569;
+            font-size: 14px;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(220, 38, 38, 0.3);
+        }
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .alternative {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid #e2e8f0;
+        }
+        .alternative h3 {
+            color: #1e293b;
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+        .alternative p {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        .alternative ol {
+            color: #475569;
+            font-size: 14px;
+            padding-left: 20px;
+        }
+        .alternative li {
+            margin-bottom: 8px;
+        }
+        .alternative code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 32px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+        .footer a {
+            color: #0d9488;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .footer p {
+            color: #94a3b8;
+            font-size: 12px;
+            margin-top: 12px;
+        }
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+        .success-message .icon {
+            width: 80px;
+            height: 80px;
+            background: #f0fdf4;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .success-message .icon span {
+            font-size: 40px;
+        }
+        .success-message h2 {
+            color: #16a34a;
+            margin-bottom: 12px;
+        }
+        .success-message p {
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <div class="logo-icon">
+                <span>🏋️</span>
+            </div>
+            <h1>Delete My Data</h1>
+            <p class="subtitle">Momentis Data Deletion Request</p>
+        </div>
+
+        <div id="form-section">
+            <div class="info-box">
+                <h3>📱 Data Stored Locally</h3>
+                <p>Momentis stores all your data locally on your device. You can delete your data directly in the app via <strong>Settings → Clear Workout Data</strong>.</p>
+            </div>
+
+            <div class="warning-box">
+                <h3>⚠️ This action is permanent</h3>
+                <p>Submitting this request will result in deletion of:</p>
+                <ul>
+                    <li>Your account and login credentials</li>
+                    <li>All workout history and programs</li>
+                    <li>Health & fitness data (weight, body fat, etc.)</li>
+                    <li>Chat history with AI Coach</li>
+                    <li>Uploaded documents and biometric reports</li>
+                </ul>
+            </div>
+
+            <form id="deletion-form">
+                <!-- Form submits via JavaScript to GitHub Issues -->
+                
+                <div class="form-group">
+                    <label for="email">Email Address (used in Momentis)</label>
+                    <input type="email" id="email" name="email" required placeholder="your@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="deletion-type">What would you like to delete?</label>
+                    <select id="deletion-type" name="deletion_type" required>
+                        <option value="">Select an option...</option>
+                        <option value="all_data">Delete all my data (keep account)</option>
+                        <option value="account_and_data">Delete my account and all data</option>
+                        <option value="specific_data">Delete specific data only</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="reason">Reason for deletion (optional)</label>
+                    <textarea id="reason" name="reason" placeholder="Let us know why you're leaving (helps us improve)..."></textarea>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="confirm" required>
+                    <label for="confirm">I understand that this action is <strong>permanent and irreversible</strong>. All my data will be deleted within 7 business days.</label>
+                </div>
+
+                <button type="submit" class="submit-btn">🗑️ Submit Deletion Request</button>
+            </form>
+
+            <div class="alternative">
+                <h3>🔧 Delete Data Yourself (Instant)</h3>
+                <p>You can instantly delete your data within the app:</p>
+                <ol>
+                    <li>Open <strong>Momentis</strong> app</li>
+                    <li>Go to <strong>Profile</strong> tab</li>
+                    <li>Scroll down to <strong>Account</strong> section</li>
+                    <li>Tap <code>Clear Workout Data</code> to delete workouts, programs, and documents</li>
+                    <li>Tap <code>Logout</code> to sign out</li>
+                    <li>Uninstall the app to remove all remaining data</li>
+                </ol>
+            </div>
+        </div>
+
+        <div id="success-message" class="success-message">
+            <div class="icon">
+                <span>✅</span>
+            </div>
+            <h2>Request Submitted</h2>
+            <p>Your data deletion request has been received. We will process your request within 7 business days and send a confirmation to your email.</p>
+        </div>
+
+        <div class="footer">
+            <a href="privacy-policy.html">← Back to Privacy Policy</a>
+            <p>© 2025 Momentis. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('deletion-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const deletionType = document.getElementById('deletion-type').value;
+            const reason = document.getElementById('reason').value || 'Not provided';
+            
+            // Create GitHub Issue URL with pre-filled content
+            const issueTitle = encodeURIComponent(`Data Deletion Request - ${email}`);
+            const issueBody = encodeURIComponent(`## Data Deletion Request
+
+**Email:** ${email}
+**Deletion Type:** ${deletionType}
+**Reason:** ${reason}
+**Date:** ${new Date().toISOString()}
+
+---
+⚠️ Please process this request within 7 business days.
+`);
+            
+            // Replace YOUR_GITHUB_USERNAME and YOUR_REPO with your actual values
+            const githubUrl = `https://github.com/YOUR_GITHUB_USERNAME/momentis-privacy/issues/new?title=${issueTitle}&body=${issueBody}&labels=deletion-request`;
+            
+            // Open GitHub issue page
+            window.open(githubUrl, '_blank');
+            
+            // Show success message
+            document.getElementById('form-section').style.display = 'none';
+            document.getElementById('success-message').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
